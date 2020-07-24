@@ -10,6 +10,7 @@
         max-width: 600px;
         margin: 0 auto;
         padding: 15px 60px;
+        background-color: #fffaf1;
       }
 
       h1 {
@@ -20,7 +21,7 @@
       h2 {
         text-align: center;
         color: #f77f77;
-        padding: 15px;
+        padding: 15px 10px;
         font-size: 18px;
         border-radius: 4px;
       }
@@ -29,7 +30,7 @@
         display: block;
         margin: 0 auto;
         max-width: 100%;
-        border-radius: 50px;
+        border-radius: 50%;
       }
 
       p {
@@ -78,10 +79,28 @@
       of my applications.
     </p>
     <img
-      src="https://media-exp1.licdn.com/dms/image/C4E03AQFA9wZ0Z2RCZw/profile-displayphoto-shrink_400_400/0?e=1600905600&v=beta&t=uoZRxJjBZcncEcTOEI4b9qVpUJAWd0Yd8Pf-BjUNIo4"
+      src="https://avatars3.githubusercontent.com/u/60553154?s=460&u=25e6ccd99bbb382d9a51f4039488a51a0e6994e7&v=4"
       alt="Alex Partida"
     />
     <button>Check out My Projects</button>
     <p class="footer">This page was built by Alex Partida</p>
+    <script>
+      function checkOutProjects() {
+        let info = prompt("Would you like more information on my projects?");
+        let name = prompt("What is your name?");
+        let email = prompt("What is you email?");
+        if (info === "yes") {
+          let h1 = document.querySelector("h1");
+          h1.innerHTML = `Thanks ${name}, Alex will get back to you at ${email} soon!`;
+        }
+        if (info === "no") {
+          let h1 = document.querySelector("h1");
+          h1.innerHTML = `Thank you for visiting my portfolio, ${name}!`;
+        }
+      }
+      let checkOutButton = document.querySelector("button");
+
+      checkOutButton.addEventListener("click", checkOutProjects);
+    </script>
   </body>
 </html>
